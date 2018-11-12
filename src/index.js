@@ -3,10 +3,12 @@ import express from 'express'
 import constants from './config/constants'
 import './config/database'
 import middlewareConfig from './config/middlewares'
+import apiRoutes from './routes'
 
 const app = express()
 
 middlewareConfig(app)
+apiRoutes(app)
 
 app.get('/', (req, res) => {
   res.send('Hello world!')
