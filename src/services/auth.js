@@ -1,7 +1,9 @@
 import passport from 'passport'
 import LocalStrategy from 'passport-local'
+import { Strategy as JWTStrategy, ExtractJwt } from 'passport-jwt'
 
 import User from '../models/user'
+import constants from '../config/constants'
 
 passport.use(
   new LocalStrategy({
@@ -23,4 +25,24 @@ passport.use(
   })
 )
 
+passport.use(
+  new JWTStrategy({
+    jwtFromRequest: ExtractJwt.fromAuthHeaderWithScheme('JWT'),
+    secretOrKey: constants.JWT_SECRET,
+  }, async (payload, done) => {
+    try {
+      const user = await User.findById(payload._id)
+
+      if (!user) {
+        return done(null, false)
+      }
+
+      return done(null, user)
+    } catch (e) {
+      return done(e, false)
+    }
+  })
+)
+
 export const authLocal = passport.authenticate('local', { session: false })
+export const authJwt = passport.authenticate('jwt', { session: false })

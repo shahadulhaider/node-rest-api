@@ -1,5 +1,6 @@
 const devConfig = {
-  MONGO_URL: 'mongodb://localhost/noderestapi-dev'
+  MONGO_URL: 'mongodb://localhost/noderestapi-dev',
+  JWT_SECRET: 'thisisatopsecret'
 }
 
 const testConfig = {
