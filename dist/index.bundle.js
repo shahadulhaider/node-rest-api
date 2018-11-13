@@ -123,6 +123,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var morg
 
 /***/ }),
 
+/***/ "./src/controllers/post.js":
+/*!*********************************!*\
+  !*** ./src/controllers/post.js ***!
+  \*********************************/
+/*! exports provided: createPost */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"createPost\", function() { return createPost; });\n/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ \"@babel/runtime/regenerator\");\n/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ \"@babel/runtime/helpers/asyncToGenerator\");\n/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _models_post__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../models/post */ \"./src/models/post.js\");\n\n\n\nfunction createPost(_x, _x2) {\n  return _createPost.apply(this, arguments);\n}\n\nfunction _createPost() {\n  _createPost = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()(\n  /*#__PURE__*/\n  _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(req, res) {\n    var post;\n    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {\n      while (1) {\n        switch (_context.prev = _context.next) {\n          case 0:\n            _context.prev = 0;\n            _context.next = 3;\n            return _models_post__WEBPACK_IMPORTED_MODULE_2__[\"default\"].createPost(req.body, req.user._id);\n\n          case 3:\n            post = _context.sent;\n            return _context.abrupt(\"return\", res.status(201).json(post));\n\n          case 7:\n            _context.prev = 7;\n            _context.t0 = _context[\"catch\"](0);\n            return _context.abrupt(\"return\", res.status(400).json(_context.t0));\n\n          case 10:\n          case \"end\":\n            return _context.stop();\n        }\n      }\n    }, _callee, this, [[0, 7]]);\n  }));\n  return _createPost.apply(this, arguments);\n}\n\n//# sourceURL=webpack:///./src/controllers/post.js?");
+
+/***/ }),
+
 /***/ "./src/controllers/user.js":
 /*!*********************************!*\
   !*** ./src/controllers/user.js ***!
@@ -132,6 +144,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var morg
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"signUp\", function() { return signUp; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"login\", function() { return login; });\n/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ \"@babel/runtime/regenerator\");\n/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ \"@babel/runtime/helpers/asyncToGenerator\");\n/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _models_user__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../models/user */ \"./src/models/user.js\");\n\n\n\nfunction signUp(_x, _x2) {\n  return _signUp.apply(this, arguments);\n}\n\nfunction _signUp() {\n  _signUp = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()(\n  /*#__PURE__*/\n  _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(req, res) {\n    var user;\n    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {\n      while (1) {\n        switch (_context.prev = _context.next) {\n          case 0:\n            _context.prev = 0;\n            _context.next = 3;\n            return _models_user__WEBPACK_IMPORTED_MODULE_2__[\"default\"].create(req.body);\n\n          case 3:\n            user = _context.sent;\n            return _context.abrupt(\"return\", res.status(201).json(user));\n\n          case 7:\n            _context.prev = 7;\n            _context.t0 = _context[\"catch\"](0);\n            return _context.abrupt(\"return\", res.status(500).json(_context.t0));\n\n          case 10:\n          case \"end\":\n            return _context.stop();\n        }\n      }\n    }, _callee, this, [[0, 7]]);\n  }));\n  return _signUp.apply(this, arguments);\n}\n\nfunction login(req, res, next) {\n  res.status(200).json(req.user);\n  return next();\n}\n\n//# sourceURL=webpack:///./src/controllers/user.js?");
+
+/***/ }),
+
+/***/ "./src/helpers/post.validation.js":
+/*!****************************************!*\
+  !*** ./src/helpers/post.validation.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var joi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! joi */ \"joi\");\n/* harmony import */ var joi__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(joi__WEBPACK_IMPORTED_MODULE_0__);\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  createPost: {\n    body: {\n      title: joi__WEBPACK_IMPORTED_MODULE_0___default.a.string().min(3).required(),\n      text: joi__WEBPACK_IMPORTED_MODULE_0___default.a.string().min(25).required()\n    }\n  }\n});\n\n//# sourceURL=webpack:///./src/helpers/post.validation.js?");
 
 /***/ }),
 
@@ -159,6 +183,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var expr
 
 /***/ }),
 
+/***/ "./src/models/post.js":
+/*!****************************!*\
+  !*** ./src/models/post.js ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/objectSpread */ \"@babel/runtime/helpers/objectSpread\");\n/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mongoose */ \"mongoose\");\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(mongoose__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var slug__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! slug */ \"slug\");\n/* harmony import */ var slug__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(slug__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var mongoose_unique_validator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! mongoose-unique-validator */ \"mongoose-unique-validator\");\n/* harmony import */ var mongoose_unique_validator__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(mongoose_unique_validator__WEBPACK_IMPORTED_MODULE_3__);\n\n\n\n\nvar PostSchema = new mongoose__WEBPACK_IMPORTED_MODULE_1__[\"Schema\"]({\n  title: {\n    type: String,\n    trim: true,\n    required: [true, ' Title is required!'],\n    minlength: [3, 'Title need to be longer!'],\n    unique: true\n  },\n  text: {\n    type: String,\n    trim: true,\n    required: [true, 'Text is required!'],\n    minlength: [25, 'Text need to be longer!']\n  },\n  slug: {\n    type: String,\n    trim: true,\n    lowercase: true\n  },\n  user: {\n    type: mongoose__WEBPACK_IMPORTED_MODULE_1__[\"Schema\"].Types.ObjectId,\n    ref: 'User'\n  },\n  favoriteCount: {\n    type: Number,\n    default: 0\n  }\n}, {\n  timestamps: true\n});\nPostSchema.plugin(mongoose_unique_validator__WEBPACK_IMPORTED_MODULE_3___default.a, {\n  message: '{VALUE} already taken!'\n});\nPostSchema.pre('validate', function (next) {\n  this._slugify();\n\n  next();\n});\nPostSchema.methods = {\n  _slugify: function _slugify() {\n    this.slug = slug__WEBPACK_IMPORTED_MODULE_2___default()(this.title);\n  }\n};\nPostSchema.statics = {\n  createPost: function createPost(args, user) {\n    return this.create(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default()({}, args, {\n      user: user\n    }));\n  }\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (mongoose__WEBPACK_IMPORTED_MODULE_1___default.a.model('Post', PostSchema));\n\n//# sourceURL=webpack:///./src/models/post.js?");
+
+/***/ }),
+
 /***/ "./src/models/user.js":
 /*!****************************!*\
   !*** ./src/models/user.js ***!
@@ -167,7 +203,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var expr
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mongoose */ \"mongoose\");\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mongoose__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var validator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! validator */ \"validator\");\n/* harmony import */ var validator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(validator__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var bcrypt_nodejs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bcrypt-nodejs */ \"bcrypt-nodejs\");\n/* harmony import */ var bcrypt_nodejs__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(bcrypt_nodejs__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! jsonwebtoken */ \"jsonwebtoken\");\n/* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(jsonwebtoken__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _helpers_user_validation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../helpers/user.validation */ \"./src/helpers/user.validation.js\");\n/* harmony import */ var _config_constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../config/constants */ \"./src/config/constants.js\");\n\n\n\n\n\n\nvar UserSchema = new mongoose__WEBPACK_IMPORTED_MODULE_0__[\"Schema\"]({\n  email: {\n    type: String,\n    unique: true,\n    required: [true, 'Email is required!'],\n    trim: true,\n    validate: {\n      validator: function validator(email) {\n        return validator__WEBPACK_IMPORTED_MODULE_1___default.a.isEmail(email);\n      },\n      message: '{VALUE} is not a valid email'\n    }\n  },\n  userName: {\n    type: String,\n    required: [true, 'UserName is required!'],\n    trim: true,\n    unique: true\n  },\n  firstName: {\n    type: String,\n    required: [true, 'First Name is required!'],\n    trim: true\n  },\n  lastName: {\n    type: String,\n    required: [true, 'Last Name is required!'],\n    trim: true\n  },\n  password: {\n    type: String,\n    required: [true, 'Password is required!'],\n    trim: true,\n    minlength: [6, 'Password should be longer!'],\n    validate: {\n      validator: function validator(password) {\n        return _helpers_user_validation__WEBPACK_IMPORTED_MODULE_4__[\"passwordReg\"].test(password);\n      },\n      message: '{VALUE} is not a valid password!'\n    }\n  }\n});\nUserSchema.pre('save', function (next) {\n  if (this.isModified('password')) {\n    this.password = this._hashPassword(this.password);\n  }\n\n  return next();\n});\nUserSchema.methods = {\n  _hashPassword: function _hashPassword(password) {\n    return Object(bcrypt_nodejs__WEBPACK_IMPORTED_MODULE_2__[\"hashSync\"])(password);\n  },\n  authenticateUser: function authenticateUser(password) {\n    return Object(bcrypt_nodejs__WEBPACK_IMPORTED_MODULE_2__[\"compareSync\"])(password, this.password);\n  },\n  createToken: function createToken() {\n    return jsonwebtoken__WEBPACK_IMPORTED_MODULE_3___default.a.sign({\n      _id: this._id\n    }, _config_constants__WEBPACK_IMPORTED_MODULE_5__[\"default\"].JWT_SECRET);\n  },\n  toJSON: function toJSON() {\n    return {\n      _id: this._id,\n      userName: this.userName,\n      token: \"JWT \".concat(this.createToken())\n    };\n  }\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (mongoose__WEBPACK_IMPORTED_MODULE_0___default.a.model('User', UserSchema));\n\n//# sourceURL=webpack:///./src/models/user.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mongoose */ \"mongoose\");\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mongoose__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var validator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! validator */ \"validator\");\n/* harmony import */ var validator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(validator__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var bcrypt_nodejs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bcrypt-nodejs */ \"bcrypt-nodejs\");\n/* harmony import */ var bcrypt_nodejs__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(bcrypt_nodejs__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! jsonwebtoken */ \"jsonwebtoken\");\n/* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(jsonwebtoken__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var mongoose_unique_validator__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! mongoose-unique-validator */ \"mongoose-unique-validator\");\n/* harmony import */ var mongoose_unique_validator__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(mongoose_unique_validator__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _helpers_user_validation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../helpers/user.validation */ \"./src/helpers/user.validation.js\");\n/* harmony import */ var _config_constants__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../config/constants */ \"./src/config/constants.js\");\n\n\n\n\n\n\n\nvar UserSchema = new mongoose__WEBPACK_IMPORTED_MODULE_0__[\"Schema\"]({\n  email: {\n    type: String,\n    unique: true,\n    required: [true, 'Email is required!'],\n    trim: true,\n    validate: {\n      validator: function validator(email) {\n        return validator__WEBPACK_IMPORTED_MODULE_1___default.a.isEmail(email);\n      },\n      message: '{VALUE} is not a valid email'\n    }\n  },\n  userName: {\n    type: String,\n    required: [true, 'UserName is required!'],\n    trim: true,\n    unique: true\n  },\n  firstName: {\n    type: String,\n    required: [true, 'First Name is required!'],\n    trim: true\n  },\n  lastName: {\n    type: String,\n    required: [true, 'Last Name is required!'],\n    trim: true\n  },\n  password: {\n    type: String,\n    required: [true, 'Password is required!'],\n    trim: true,\n    minlength: [6, 'Password should be longer!'],\n    validate: {\n      validator: function validator(password) {\n        return _helpers_user_validation__WEBPACK_IMPORTED_MODULE_5__[\"passwordReg\"].test(password);\n      },\n      message: '{VALUE} is not a valid password!'\n    }\n  }\n}, {\n  timestamps: true\n});\nUserSchema.plugin(mongoose_unique_validator__WEBPACK_IMPORTED_MODULE_4___default.a, {\n  message: '{VALUE} already taken!'\n});\nUserSchema.pre('save', function (next) {\n  if (this.isModified('password')) {\n    this.password = this._hashPassword(this.password);\n  }\n\n  return next();\n});\nUserSchema.methods = {\n  _hashPassword: function _hashPassword(password) {\n    return Object(bcrypt_nodejs__WEBPACK_IMPORTED_MODULE_2__[\"hashSync\"])(password);\n  },\n  authenticateUser: function authenticateUser(password) {\n    return Object(bcrypt_nodejs__WEBPACK_IMPORTED_MODULE_2__[\"compareSync\"])(password, this.password);\n  },\n  createToken: function createToken() {\n    return jsonwebtoken__WEBPACK_IMPORTED_MODULE_3___default.a.sign({\n      _id: this._id\n    }, _config_constants__WEBPACK_IMPORTED_MODULE_6__[\"default\"].JWT_SECRET);\n  },\n  toJSON: function toJSON() {\n    return {\n      _id: this._id,\n      userName: this.userName,\n      token: \"JWT \".concat(this.createToken())\n    };\n  }\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (mongoose__WEBPACK_IMPORTED_MODULE_0___default.a.model('User', UserSchema));\n\n//# sourceURL=webpack:///./src/models/user.js?");
 
 /***/ }),
 
@@ -179,7 +215,19 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var mong
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./user */ \"./src/routes/user.js\");\n/* harmony import */ var _services_auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/auth */ \"./src/services/auth.js\");\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (function (app) {\n  app.use('/api/users', _user__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n  app.get('/hello', _services_auth__WEBPACK_IMPORTED_MODULE_1__[\"authJwt\"], function (req, res) {\n    res.send('This is a private route!!');\n  });\n});\n\n//# sourceURL=webpack:///./src/routes/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./user */ \"./src/routes/user.js\");\n/* harmony import */ var _post__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./post */ \"./src/routes/post.js\");\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (function (app) {\n  app.use('/api/users', _user__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n  app.use('/api/posts', _post__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\n});\n\n//# sourceURL=webpack:///./src/routes/index.js?");
+
+/***/ }),
+
+/***/ "./src/routes/post.js":
+/*!****************************!*\
+  !*** ./src/routes/post.js ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var express__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! express */ \"express\");\n/* harmony import */ var express__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(express__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var express_validation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! express-validation */ \"express-validation\");\n/* harmony import */ var express_validation__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(express_validation__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _controllers_post__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../controllers/post */ \"./src/controllers/post.js\");\n/* harmony import */ var _services_auth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/auth */ \"./src/services/auth.js\");\n/* harmony import */ var _helpers_post_validation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../helpers/post.validation */ \"./src/helpers/post.validation.js\");\n\n\n\n\n\nvar routes = new express__WEBPACK_IMPORTED_MODULE_0__[\"Router\"]();\nroutes.post('/', _services_auth__WEBPACK_IMPORTED_MODULE_3__[\"authJwt\"], express_validation__WEBPACK_IMPORTED_MODULE_1___default()(_helpers_post_validation__WEBPACK_IMPORTED_MODULE_5__[\"default\"].createPost), _controllers_post__WEBPACK_IMPORTED_MODULE_2__[\"createPost\"]);\n/* harmony default export */ __webpack_exports__[\"default\"] = (routes);\n\n//# sourceURL=webpack:///./src/routes/post.js?");
 
 /***/ }),
 
@@ -339,6 +387,17 @@ eval("module.exports = require(\"mongoose\");\n\n//# sourceURL=webpack:///extern
 
 /***/ }),
 
+/***/ "mongoose-unique-validator":
+/*!********************************************!*\
+  !*** external "mongoose-unique-validator" ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"mongoose-unique-validator\");\n\n//# sourceURL=webpack:///external_%22mongoose-unique-validator%22?");
+
+/***/ }),
+
 /***/ "morgan":
 /*!*************************!*\
   !*** external "morgan" ***!
@@ -380,6 +439,17 @@ eval("module.exports = require(\"passport-jwt\");\n\n//# sourceURL=webpack:///ex
 /***/ (function(module, exports) {
 
 eval("module.exports = require(\"passport-local\");\n\n//# sourceURL=webpack:///external_%22passport-local%22?");
+
+/***/ }),
+
+/***/ "slug":
+/*!***********************!*\
+  !*** external "slug" ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"slug\");\n\n//# sourceURL=webpack:///external_%22slug%22?");
 
 /***/ }),
 
