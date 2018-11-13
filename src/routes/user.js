@@ -3,9 +3,11 @@ import validate from 'express-validation'
 
 import * as userController from '../controllers/user'
 import userValidation from '../helpers/user.validation'
+import { authLocal } from '../services/auth'
 
-const router = new Router()
+const routes = new Router()
 
-router.post('/signup', validate(userValidation.signup) , userController.signUp)
+routes.post('/signup', validate(userValidation.signup), userController.signUp)
+routes.post('/login', authLocal, userController.login)
 
-export default router
+export default routes
