@@ -6,11 +6,14 @@ mongoose.Promise = global.Promise
 
 // connect to mongodb
 try {
-  mongoose.connect(constants.MONGO_URL, { useNewUrlParser: true })
+  mongoose.connect(
+    constants.MONGO_URL,
+    { useNewUrlParser: true },
+  )
 } catch (err) {
   mongoose.createConnection(constants.MONGO_URL, {
     useNewUrlParser: true,
-    useCreateIndex: true
+    useCreateIndex: true,
   })
 }
 

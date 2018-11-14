@@ -4,56 +4,58 @@ import { hashSync, compareSync } from 'bcrypt-nodejs'
 import jwt from 'jsonwebtoken'
 import uniqueValidator from 'mongoose-unique-validator'
 
-
 import { passwordReg } from '../helpers/user.validation'
 import constants from '../config/constants'
 
-const UserSchema = new Schema({
-  email: {
-    type: String,
-    unique: true,
-    required: [true, 'Email is required!'],
-    trim: true,
-    validate: {
-      validator(email) {
-        return validator.isEmail(email)
+const UserSchema = new Schema(
+  {
+    email: {
+      type: String,
+      unique: true,
+      required: [true, 'Email is required!'],
+      trim: true,
+      validate: {
+        validator(email) {
+          return validator.isEmail(email)
+        },
+        message: '{VALUE} is not a valid email',
       },
-      message: '{VALUE} is not a valid email'
-    }
-  },
-  userName: {
-    type: String,
-    required: [true, 'UserName is required!'],
-    trim: true,
-    unique: true,
-  },
-  firstName: {
-    type: String,
-    required: [true, 'First Name is required!'],
-    trim: true,
-  },
-  lastName: {
-    type: String,
-    required: [true, 'Last Name is required!'],
-    trim: true,
-  },
-  password: {
-    type: String,
-    required: [true, 'Password is required!'],
-    trim: true,
-    minlength: [6, 'Password should be longer!'],
-    validate: {
-      validator(password) {
-        return passwordReg.test(password)
+    },
+    userName: {
+      type: String,
+      required: [true, 'UserName is required!'],
+      trim: true,
+      unique: true,
+    },
+    firstName: {
+      type: String,
+      required: [true, 'First Name is required!'],
+      trim: true,
+    },
+    lastName: {
+      type: String,
+      required: [true, 'Last Name is required!'],
+      trim: true,
+    },
+    password: {
+      type: String,
+      required: [true, 'Password is required!'],
+      trim: true,
+      minlength: [6, 'Password should be longer!'],
+      validate: {
+        validator(password) {
+          return passwordReg.test(password)
+        },
+        message: '{VALUE} is not a valid password!',
       },
-      message: '{VALUE} is not a valid password!'
-    }
-  }
-}, { timestamps: true })
+    },
+  },
+  { timestamps: true },
+)
 
 UserSchema.plugin(uniqueValidator, { message: '{VALUE} already taken!' })
 
-UserSchema.pre('save', function (next) {
+UserSchema.pre('save', function(next) {
   if (this.isModified('password')) {
     this.password = this._hashPassword(this.password)
   }
@@ -75,15 +77,15 @@ UserSchema.methods = {
     return {
       _id: this._id,
       userName: this.userName,
-      token: `JWT ${this.createToken()}`
+      token: `JWT ${this.createToken()}`,
     }
   },
   toJSON() {
     return {
       _id: this._id,
-      userName: this.userName
+      userName: this.userName,
     }
-  }
+  },
 }
 
 export default mongoose.model('User', UserSchema)

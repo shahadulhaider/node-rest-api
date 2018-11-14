@@ -23,7 +23,7 @@ export async function getPostById(req, res) {
 export async function getPostsList(req, res) {
   const limit = parseInt(req.query.limit, 0)
   const skip = parseInt(req.query.skip, 0)
-  
+
   try {
     const posts = await Post.list({ limit, skip })
     return res.status(HTTPStatus.OK).json(posts)
